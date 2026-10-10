@@ -57,12 +57,18 @@ const Navbar = () => {
           className="border border-gray-400 px-3 py-2 w-full rounded-lg focus:outline-none"
         />
       </div>
-      <div className="md:hidden py-1 px-4">
+      <div className="md:hidden pb-4 px-4">
         {isOpenMenu && (
           <div className="flex flex-col gap-4">
-            <Link to="/">Home</Link>
-            <Link to="/products">Products</Link>
-            <Link to="/about">About</Link>
+            <Link onClick={() => setIsOpenMenu(false)} to="/">
+              Home
+            </Link>
+            <Link onClick={() => setIsOpenMenu(false)} to="/products">
+              Products
+            </Link>
+            <Link onClick={() => setIsOpenMenu(false)} to="/about">
+              About
+            </Link>
           </div>
         )}
       </div>
