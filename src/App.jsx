@@ -8,6 +8,7 @@ import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
 import Wishlist from "./pages/Wishlist";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </nav>
   );
 };
