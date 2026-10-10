@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { getCategories } from "../services/productServices";
+import { useNavigate } from "react-router-dom";
 
 const CategoryCards = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -36,7 +39,8 @@ const CategoryCards = () => {
         {categories.map((category) => (
           <div
             key={category.slug}
-            className="rounded-xl border p-4 text-center transition hover:border-blue-500 hover:shadow-md"
+            onClick={() => navigate(`/products?category=${category.slug}`)}
+            className="cursor-pointer rounded-xl border p-4 text-center transition hover:border-blue-500 hover:shadow-md"
           >
             <h3 className="font-semibold capitalize">{category.name}</h3>
           </div>

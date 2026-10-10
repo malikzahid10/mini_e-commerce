@@ -15,3 +15,8 @@ export const getFeatureProducts = async () => {
 
   return response.data.products;
 };
+
+export const getAllProducts = async () => {
+  const response = await axios.get(`${API_URL}?limit=0`);
+  return response.data.products;
+};
